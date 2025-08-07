@@ -37,7 +37,7 @@ validate $? "Disabling default Nodejs"
 dnf module enable nodejs:20 -y &>>$LOGPATH
 validate $? "enabling module nodejs version 20"
 
-dnf install nodejs &>>$LOGPATH
+dnf install nodejs -y &>>$LOGPATH
 validate $? "Installing nodejs"
 
 id expense &>>$LOGPATH
