@@ -54,12 +54,13 @@ mkdir -p /app &>>$LOGPATH
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
 
 cd /app
+rm -rf *
 unzip /tmp/backend.zip
 
 npm install &>>$LOGPATH
 validate $? "Installing nodejs dependencies"
 
-cp backend.service /etc/systemd/system/backend.service
+cp /home/ec2-user/Shell-Expense/backend.service /etc/systemd/system/backend.service
 validate $? "copying backend service file to systemd"
 
 systemctl daemon-reload &>>$LOGPATH
