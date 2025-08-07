@@ -69,7 +69,7 @@ validate $? "daemon-reload"
 systemctl start backend &>>$LOGPATH
 validate $? "starting backend"
 
-mysql -h db.gurudathbn.site -uroot -p$mysql_root_password < /app/schema/backend.sql &>>$LOGFILE
+mysql -h db.gurudathbn.site -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
 validate $? "Adding date to db"
 
 systemctl restart backend &>>$LOGPATH
