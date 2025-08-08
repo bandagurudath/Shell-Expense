@@ -44,6 +44,6 @@ if [ $? -eq 0 ]
 then
 echo "mysql_root_password is already set"
 else
-mysql_secure_installation --set-root-pass -p$mysql_root_password &>>$LOGPATH
+mysql_secure_installation --set-root-pass $mysql_root_password &>>$LOGPATH
 validate $? "Setting root Password"
 fi
