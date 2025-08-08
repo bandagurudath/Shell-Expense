@@ -35,7 +35,7 @@ validate $? "starting nginx"
 systemctl enable nginx &>>$LOGPATH
 validate $? "enabling nginx"
 
-curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip &>>$LOGPATH
 
 rm -rf /usr/share/nginx/html/* &>>$LOGPATH
 validate $? "removing default html files"
