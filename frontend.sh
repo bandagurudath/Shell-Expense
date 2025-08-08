@@ -18,7 +18,7 @@ echo -e "$2 ...... $R Failure $N"
 fi
 }
 
-if [ $USERID -eq 0]
+if [ $USERID -eq 0 ]
 then
 echo "You are super user"
 else 
