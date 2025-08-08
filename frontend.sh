@@ -44,7 +44,7 @@ cd /usr/share/nginx/html/
 unzip /tmp/frontend.zip  &>>$LOGPATH
 validate $? "unzip frontend files"
 
-cp expense.conf /etc/nginx/default.d/ &>>$LOGPATH
+cp expense.conf /etc/nginx/default.d/expense.conf &>>$LOGPATH
 validate $? "copying configuration file"
 
 systemctl restart nginx &>>$LOGPATH
