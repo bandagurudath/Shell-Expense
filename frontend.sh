@@ -40,7 +40,8 @@ curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expe
 rm -rf /usr/share/nginx/html/* &>>$LOGPATH
 validate $? "removing default html files"
 
-unzip /tmp/frontend.zip /usr/share/nginx/html/ &>>$LOGPATH
+cd /usr/share/nginx/html/
+unzip /tmp/frontend.zip  &>>$LOGPATH
 validate $? "unzip frontend files"
 
 cp expense.conf /etc/nginx/default.d/ &>>$LOGPATH

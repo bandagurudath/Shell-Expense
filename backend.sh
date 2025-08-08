@@ -40,6 +40,9 @@ validate $? "enabling module nodejs version 20"
 dnf install nodejs -y &>>$LOGPATH
 validate $? "Installing nodejs"
 
+dnf install mysql -y &>>$LOGPATH
+validate $? "Installing mysql"
+
 id expense &>>$LOGPATH
 if [ $? -eq 0 ]
 then
