@@ -5,6 +5,8 @@ SCRIPTNAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGPATH=/tmp/$SCRIPTNAME-$TIMESTAMP.log
 mysql_root_user=root
+echo "Enter mysql root password"
+read mysql_root_password
 
 R="\e[31m"
 G="\e[32m"
@@ -27,9 +29,6 @@ else
 echo "you are not super user" 
 exit 1
 fi
-
-echo "Enter mysql root password"
-read mysql_root_password
 
 dnf install mysql-server -y &>>$LOGPATH
 validate $? "Installing mysql-server"
